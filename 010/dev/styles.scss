@@ -1,0 +1,148 @@
+// ESTILO PARA LAS FUENTES
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600');
+$font: 'Source Sans Pro', sans-serif;
+$light: 300;
+$normal: 400;
+$bold: 600;
+
+// PALETA DE COLORES
+$bg: white;
+$black: #222;
+$primary: #292d3e;
+$secondary: #ff5e5e;
+$tertiary: lightseagreen;
+
+// OFFCANVAS
+$offcanvas: 1200px;
+
+// ESTILOS GENERALES
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1, h2, h3, h4, h5, h6,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  font-family: $font;
+  background: $bg;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $normal;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+// ESTILOS PARA EL BG CONTAINER
+.main-container {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../img/bg.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: $primary;
+    opacity: .5;
+  }
+}
+
+
+// ESTILOS PARA EL HEADER
+.main-header {
+  position: relative;
+}
+
+
+// ESTILOS PARA EL MENU
+.main-nav {
+  background: $bg;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  &__menu {
+    // background: lightyellow;
+    list-style: none;
+  }
+  &__item {
+    // background: lightsalmon;
+    padding: .5em;
+    &:first-child {
+      padding-top: 1em;
+    }
+    &:last-child {
+      padding-bottom: 1em;
+    }
+    .logo-container {
+      // background: lightgrey;
+      width: 86px;
+      height: 92.922px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__logo {
+      width: 90%;
+      transition: all .3s ease;
+    &:hover {
+      width: 100%;
+    }
+  }
+  &__link {
+    // background: lightskyblue;
+    display: block;
+    font-size: 1.2em;
+    font-weight: $light;
+    line-height: 2em;
+    color: $black;
+    margin: 0 3em;
+    box-shadow: 0 -1px 0 0 $secondary inset;
+    transition: all .3s ease;
+    &:hover {
+      box-shadow: 0 -2em 0 0 $secondary inset;
+      color: $bg;
+    }
+  }
+}
+
+// ESTILOS PARA
+
+
+
+// ESTILOS PARA
+
+
+
+// ESTILOS PARA
+
+

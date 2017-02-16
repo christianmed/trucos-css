@@ -1,0 +1,52 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+$bg: darkslateblue;
+
+body {
+  background: $bg;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+h2 {
+  color: rgba(#fff,.5);
+  text-align: center;
+}
+
+.sombra-curva {
+  width: 200px;
+  height: 200px;
+  margin: 10rem auto;
+  line-height: 200px;
+  font-size: 1.75em;
+  font-weight: 600;
+  text-align: center;
+  background: lighten($bg,15);
+  color: darken($bg,15);
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -10;
+    width: 94%;
+    height: 5%;
+    background: darken($bg,15);
+    bottom: 3%;
+    box-shadow: 0 7px 5px 0 rgba(#222,.75);
+  }
+  &::before {
+    left: 2%;
+    transform: rotate(-3deg);
+  }
+  &::after {
+    right: 2%;
+    transform: rotate(3deg);
+  }
+}

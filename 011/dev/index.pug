@@ -1,0 +1,18 @@
+doctype
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+    title Minimal Web
+    link(rel="stylesheet", href="css/styles.css")
+  body
+    .main-container
+      header.main-header
+        nav.main-nav
+          ul.main-nav__menu
+            li.main-nav__item
+              .logo-container
+                img.main-nav__logo(src="img/logo.jpg", alt="LOGO")
+            -var items = ['Home','Work','About','Feed','Jobs','Contact']
+            each item in items
+              li.main-nav__item: a.main-nav__link(href="#")= item

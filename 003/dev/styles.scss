@@ -1,0 +1,43 @@
+@function box-long-shadow($num,$color) {
+  $box-shadow: 1px 1px $color; /*Declaración de la variable*/
+  @for $i from 2 through $num {
+    $box-shadow: '#{$box-shadow},
+                 #{$i}px #{$i}px #{$color}';
+  }
+  @return unquote($box-shadow);
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+$bg: tomato;
+
+body {
+  background: $bg;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+.box-long-shadow {
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  margin: 10rem auto;
+  background: darken($bg, 25);
+  font-size: 1.8em;
+  text-align: center;
+  color: lighten($bg,10);
+  font-weight: 600;
+  box-shadow: box-long-shadow(150, darken($bg,35));
+}

@@ -1,0 +1,136 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+$bg: salmon;
+
+body {
+  background: $bg;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+h2 {
+  color: rgba(#fff,.5);
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  height: 150px;
+  margin: 3rem auto;
+  box-shadow: 0 0 0 4px darken($bg,10);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+// Estilos generales para las cajas
+[class^="box-"] {
+  width: 120px;
+  height: 60px;
+  line-height: 60px;
+  background: lighten($bg,15);
+  color: darken($bg,10);
+  font-weight: 600;
+  text-align: center;
+  transition: all .3s ease;
+}
+
+// Estilos para bordes #1
+.box-left-1:hover {
+    box-shadow: 3px 0 rgba(#222,.75) inset;
+}
+.box-right-1:hover {
+    box-shadow: -3px 0 rgba(#222,.75) inset;
+}
+.box-top-1:hover {
+    box-shadow: 0 3px rgba(#222,.75) inset;
+}
+.box-bottom-1:hover {
+    box-shadow: 0 -3px rgba(#222,.75) inset;
+}
+
+// Estilos generales para bordes #2
+[class$="-2"]:hover,
+[class$="-3"]:hover {
+  color: lighten($bg,15);
+}
+
+// Estilos para bordes #2
+.box-left-2 {
+  box-shadow: 3px 0 rgba(#222,.75) inset;
+  &:hover {
+    box-shadow: 120px 0 rgba(#222,.75) inset;
+  }
+}
+.box-right-2 {
+    box-shadow: -3px 0 rgba(#222,.75) inset;
+  &:hover {
+    box-shadow: -120px 0 rgba(#222,.75) inset;
+  }
+}
+.box-top-2 {
+    box-shadow: 0 3px rgba(#222,.75) inset;
+  &:hover {
+    box-shadow: 0 60px rgba(#222,.75) inset;
+  }
+}
+.box-bottom-2 {
+    box-shadow: 0 -3px rgba(#222,.75) inset;
+  &:hover {
+    box-shadow: 0 -60px rgba(#222,.75) inset;
+  }
+}
+
+// Estilos para bordes #3
+.box-left-3 {
+  box-shadow:
+    3px 0 rgba(#222,.75) inset,
+    -3px 0 rgba(#222,.75) inset;
+  &:hover {
+    box-shadow:
+      60px 0 rgba(#222,.75) inset,
+      -60px 0 rgba(#222,.75) inset;
+  }
+}
+.box-right-3 {
+  box-shadow:
+    60px 0 rgba(#222,.75) inset,
+    -60px 0 rgba(#222,.75) inset;
+    color: lighten($bg,15);
+  &:hover {
+    box-shadow:
+      3px 0 rgba(#222,.75) inset,
+      -3px 0 rgba(#222,.75) inset;
+      color: darken($bg,15);
+  }
+}
+.box-top-3 {
+  box-shadow:
+    0px 3px rgba(#222,.75) inset,
+    0px -3px rgba(#222,.75) inset;
+  &:hover {
+    box-shadow:
+      0 30px rgba(#222,.75) inset,
+      0 -30px rgba(#222,.75) inset;
+  }
+}
+.box-bottom-3 {
+  box-shadow:
+    0px 30px rgba(#222,.75) inset,
+    0px -30px rgba(#222,.75) inset;
+    color: lighten($bg,15);
+  &:hover {
+    box-shadow:
+      0 3px rgba(#222,.75) inset,
+      0 -3px rgba(#222,.75) inset;
+      color: darken($bg,15);
+  }
+}
+

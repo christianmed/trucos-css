@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body, h1, h2, h3, h4, h5, h6, hr, p, span, ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #EEE;
+  font-family: sans-serif;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1024px;
+  height: 20em;
+  background: #DDD;
+  margin: 2em auto;
+}
+
+.title {
+  height: 2em;
+  line-height: 2em;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  background: lightseagreen;
+}
+
+.yinyang {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 2em auto;
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    white 50%,
+    black 50%
+  );
+  animation: rotate 2s linear infinite;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    left: 25%;
+  }
+  &::before {
+    background: radial-gradient(
+      20px circle at 50% 50%,
+      black 50%,
+      transparent 50%
+    ),
+    white;
+  }
+  &::after {
+    bottom: 0;
+    background: radial-gradient(
+      20px circle at 50% 50%,
+      white 50%,
+      transparent 50%
+    ),
+    black;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.corner-top-left,
+.corner-top-right,
+.corner-bottom-left,
+.corner-bottom-right {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+  }
+}
+
+.corner-top-left,
+.corner-top-right {
+  &::after {
+    top: 100%;
+    border-top: 100px solid red;
+  }
+}
+
+.corner-bottom-left,
+.corner-bottom-right {
+  &::after {
+    bottom: 100%;
+    border-bottom: 100px solid red;
+  }
+}
+
+.corner-top-left,
+.corner-bottom-left {
+  &::after {
+    border-right: 100vw solid transparent;
+  }
+}
+
+.corner-top-right,
+.corner-bottom-right {
+  &::after {
+    border-left: 100vw solid transparent;
+  }
+}

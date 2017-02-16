@@ -1,0 +1,374 @@
+// ESTILOS PARA LAS FUENTES
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+$font: 'Raleway', sans-serif;
+$light: 300;
+$normal: 400;
+$bold: 700;
+
+// PALETA DE COLORES
+$bg: #EEE;
+$primary: darkslateblue;
+$secondary: #DDD;
+$white: #FFF;
+$black: #292B2C;
+
+// VARIABLES
+$size: 50px;
+
+
+/*===========================================================================*/
+/*===========================================================================*/
+/*===========================================================================*/
+* {
+  box-sizing: border-box;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, hr, p, span, ul {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+body {
+  background: $bg;
+  font-family: $font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $normal;
+}
+
+img {
+  display: block;
+}
+/*===========================================================================*/
+/*===========================================================================*/
+/*===========================================================================*/
+.wrapper {
+  background: $white;
+  width: 90%;
+  max-width: 1024px;
+  height: 10em;
+  margin: 2em auto;
+  box-shadow: 0 20px 30px -10px rgba($black,.3);
+}
+
+.title {
+  background: $primary;
+  color: $white;
+  width: 100%;
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.spinners {
+  // background: lightgreen;
+  width: 100%;
+  height: 7.65em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[class^="spinner-"] {
+  background: $secondary;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  margin: 0 1em;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+  }
+}
+/*===========================================================================*/
+/*===========================================================================*/
+/*===========================================================================*/
+.spinner-1 {
+
+  &::before {
+    top: -2.5px;
+    left: -2.5px;
+    border: 2.5px solid transparent;
+    border-top-color: $primary;
+    border-bottom-color: $primary;
+    animation: spinny 1s linear infinite;
+  }
+}
+
+@keyframes spinny {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(45deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+/*===========================================================================*/
+/*===========================================================================*/
+/*===========================================================================*/
+.spinner-2 {
+  animation: rotate 2s linear infinite;
+
+  &::before,
+  &::after {
+    width: $size / 5;
+    height: $size / 5;
+    background: $primary;
+    left: 50%;
+    margin-left: -(($size / 5) / 2);
+  }
+  &::before {
+    top: -($size / 5);
+    animation: bounce-t .5s ease infinite;
+  }
+  &::after {
+    bottom: -($size / 5);
+    animation: bounce-b .5s ease infinite;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce-t {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bounce-b {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(10px);
+  }
+}
+/*===========================================================================*/
+/*===========================================================================*/
+/*===========================================================================*/
+.spinner-3 {
+  background: none;
+  border: 3px solid $secondary;
+  &::before {
+    width: 2px;
+    height: 35px;
+    background: $primary;
+    border-radius: 50px;
+    top: 50%;
+    left: 50%;
+    margin-left: -1px;
+    transform-origin: center top;
+    animation: rotate 2s linear infinite;
+  }
+}
+/*===========================================================================*/
+/*===========================================================================*/
+/*===========================================================================*/
+.spinner-4 {
+  
+  &::before,
+  &::after {
+    background: $primary;
+    opacity: 0;
+  }
+  &::before {
+    animation: pulse 2s linear infinite;
+  }
+  &::after {
+    animation: pulse 2s linear 1s infinite;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+/*===========================================================================*/
+/*===========================================================================*/
+/*===========================================================================*/
+.spinner-5 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    width: $size / 5;
+    height: $size / 5;
+    background: $primary;
+    border-radius: 50%;
+
+    &:nth-child(1) {
+      animation: bounce 1s ease-out infinite;
+    }
+    &:nth-child(2) {
+      animation: bounce 1s ease-out .33s infinite;
+    }
+    &:nth-child(3) {
+      animation: bounce 1s ease-out .66s infinite;
+    }
+  }
+}
+
+@keyframes bounce {
+  0%, 75%, 100% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+}
+/*===========================================================================*/
+/*===========================================================================*/
+/*===========================================================================*/
+.loaders {
+  width: 100%;
+  height: 7.65em;
+  position: relative;
+}
+.pacman {
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    width: $size;
+    height: $size / 2;
+    top: 50%;
+    left: 50%;
+    margin-top: -($size / 2);
+    margin-left: -($size / 2);
+    background: $primary;
+  }
+  &::before {
+    border-radius: ($size/2) ($size/2) 0 0;
+    animation: up .4s ease-out infinite;
+  }
+  &::after {
+    margin-top: -1px;
+    border-radius: 0 0 ($size/2) ($size/2);
+    animation: down .4s ease-out infinite;
+  }
+}
+
+.dot {
+  position: absolute;
+  width: $size / 5;
+  height: $size / 5;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin-top: -($size / 10);
+  margin-left: 30px;
+  box-shadow: 30px 0 0 $secondary,
+              60px 0 0 $secondary,
+              90px 0 0 $secondary,
+              120px 0 0 $secondary,
+              150px 0 0 $secondary;
+  background: $secondary;
+  animation: dot .5s linear infinite;
+}
+
+@keyframes up {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-30deg);
+  }
+}
+
+@keyframes down {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(30deg);
+  }
+}
+
+@keyframes dot {
+  100% {
+    margin-left: -1px;
+  }
+}
+/*===========================================================================*/
+/*===========================================================================*/
+/*===========================================================================*/
+.loaders2 {
+  width: 100%;
+  height: 7.65em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pacman2 {
+  background: lightgreen;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  
+
+  &::before,
+  &::after {
+    content: "";
+    width: $size;
+    height: $size / 2;
+    background: $primary;
+  }
+  &::before {
+    border-radius: ($size/2) ($size/2) 0px 0px;
+    animation: up .4s ease-out infinite;
+  }
+  &::after {
+    border-radius: 0px 0px ($size/2) ($size/2);
+    animation: down .4s ease-out infinite;
+  }
+
+}
+
+.dot2 {
+  // position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: red;
+  top: 50%;
+  left: 50%;
+  margin-top: -5px;
+  margin-left: 15px;
+
+  animation: dot .5s linear infinite;
+}

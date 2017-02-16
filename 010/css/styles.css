@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600");
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+html,
+body,
+h1, h2, h3, h4, h5, h6,
+ul {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 16px;
+  line-height: 1.5; }
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  background: white; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400; }
+
+img {
+  display: block; }
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center; }
+
+.main-container {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../img/bg.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative; }
+  .main-container::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #292d3e;
+    opacity: .5; }
+
+.main-header {
+  position: relative; }
+
+.main-nav {
+  background: white;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0; }
+  .main-nav__menu {
+    list-style: none; }
+  .main-nav__item {
+    padding: .5em; }
+    .main-nav__item:first-child {
+      padding-top: 1em; }
+    .main-nav__item:last-child {
+      padding-bottom: 1em; }
+    .main-nav__item .logo-container {
+      width: 86px;
+      height: 92.922px;
+      margin: 0 auto;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
+  .main-nav__logo {
+    width: 90%;
+    transition: all .3s ease; }
+    .main-nav__logo:hover {
+      width: 100%; }
+  .main-nav__link {
+    display: block;
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 2em;
+    color: #222;
+    margin: 0 3em;
+    box-shadow: 0 -1px 0 0 #ff5e5e inset;
+    transition: all .3s ease; }
+    .main-nav__link:hover {
+      box-shadow: 0 -2em 0 0 #ff5e5e inset;
+      color: white; }

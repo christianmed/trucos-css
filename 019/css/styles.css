@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box; }
+
+html, body, h1, h2, h3, h4, h5, h6, p, span, ul {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 16px; }
+
+body {
+  background: #eee;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400; }
+
+img {
+  display: block; }
+
+/*===========================================================*/
+/*===========================================================*/
+/*===========================================================*/
+/*===========================================================*/
+header {
+  width: 100%;
+  height: 75px;
+  background: salmon; }
+
+h1 {
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 2em; }
+
+.container {
+  width: 80%;
+  height: 300px;
+  margin: 4em auto;
+  background: #fff;
+  box-shadow: 0 20px 35px -10px rgba(34, 34, 34, 0.25), 0 0 10px 3px rgba(34, 34, 34, 0.1);
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.heart {
+  width: 150px;
+  height: 150px;
+  background: salmon;
+  position: relative;
+  -webkit-animation: pulse .75s ease-out infinite;
+          animation: pulse .75s ease-out infinite; }
+  .heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: salmon; }
+  .heart::before {
+    margin-top: -75px; }
+  .heart::after {
+    margin-left: -75px; }
+
+@-webkit-keyframes pulse {
+  0%, 100% {
+    -webkit-transform: scale(0.9) rotate(45deg);
+            transform: scale(0.9) rotate(45deg); }
+  25% {
+    -webkit-transform: scale(1) rotate(45deg);
+            transform: scale(1) rotate(45deg); } }
+
+@keyframes pulse {
+  0%, 100% {
+    -webkit-transform: scale(0.9) rotate(45deg);
+            transform: scale(0.9) rotate(45deg); }
+  25% {
+    -webkit-transform: scale(1) rotate(45deg);
+            transform: scale(1) rotate(45deg); } }

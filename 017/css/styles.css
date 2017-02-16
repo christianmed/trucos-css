@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  background: #eee;
+  margin-bottom: 2em; }
+
+.container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.box-1 {
+  width: 0;
+  height: 0;
+  margin: 1em auto;
+  border-top: 50px solid transparent;
+  border-right: 50px solid salmon;
+  border-bottom: 50px solid transparent;
+  margin: 0; }
+
+.box-2 {
+  width: 0;
+  height: 0;
+  margin: 1em auto;
+  border-top: 50px solid transparent;
+  border-left: 50px solid salmon;
+  border-bottom: 50px solid transparent;
+  margin: 0; }

@@ -1,0 +1,313 @@
+// FONT
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+$font: 'Raleway', sans-serif;
+$light: 300;
+$normal: 400;
+$bold: 700;
+
+// COLORS
+$bg: #ededed;
+$white: #fff;
+$black: #333;
+$primary: tomato;
+$secondary: #eee;
+
+// SIZE SPINNER
+$size: 40px;
+
+
+// RESET
+*{
+  box-sizing: border-box;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, hr, p, span, ul {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+body {
+  background: $bg;
+  font-family: $font;
+  color: $black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $normal;
+}
+
+/*==============================================*/
+//  GENERAL STYLES (.WRAPPER, .TITLE, SPINNERS)
+/*==============================================*/
+
+.wrapper {
+  width: 80%;
+  height: 160px;
+  max-width: 1024px;
+  margin: 2.5em auto;
+  background: $white;
+  // box-shadow: 0 10px 20px -6px rgba(0,0,0,.2),
+  //             0 7px 20px rgba(0,0,0,.1);
+  box-shadow: 0px 20px 30px -10px rgba(0,0,0,.25);
+}
+
+.title {
+  background: $primary;
+  text-align: center;
+  line-height: 2em;
+  color: $white;
+}
+
+.spinners, .loaders {
+  // background: lightgreen;
+  width: 100%;
+  height: calc(100% - 2.3em);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[class^="spinner-"] {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background: $secondary;
+  margin: 0 1em;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+  }
+}
+
+/*==============================================*/
+//  SPINNER 1  -  ANIMATION SPINNY
+/*==============================================*/
+.spinner-1 {
+
+  &::after {
+    top: -2px;
+    left: -2px;
+    border: 2px solid transparent;
+    border-top-color: $primary;
+    border-bottom-color: $primary;
+    animation: spinny 1s linear infinite;
+  }
+}
+
+@keyframes spinny {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(45deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/*==============================================*/
+//  SPINNER 2  -  ANIMATION SPINNY
+/*==============================================*/
+.spinner-2 {
+  animation: spin 2s linear infinite;
+
+  &::before,
+  &::after {
+    width: 8px;
+    height: 8px;
+    background: $primary;
+    left: 50%;
+    margin-left: -4px;
+  }
+  &::before {
+    top: -4px;
+    animation: bouncy-1 .5s ease-in infinite;
+  }
+  &::after {
+    bottom: -4px;
+    animation: bouncy-2 .5s ease-in infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bouncy-1 {
+  0%, 100% {
+    transform: translateY(0px); 
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bouncy-2 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/*==============================================*/
+//  SPINNER 2  -  ANIMATION SPINNY
+/*==============================================*/
+.spinner-3 {
+  background: none;
+  border: 2px solid $secondary;
+
+  &::before {
+    width: 1.5px;
+    height: 25px;
+    background: $primary;
+    border-radius: 0;
+    top: 50%;
+    left: 50%;
+    margin-left: -.75px;
+    transform-origin: top center;
+    animation: spin 2s linear infinite;
+  }
+}
+
+/*==============================================*/
+//  SPINNER 2  -  ANIMATION SPINNY
+/*==============================================*/
+.spinner-4 {
+  
+  &::before,
+  &::after {
+    background: $primary;
+  }
+  &::before {
+    animation: pulse 2s linear infinite;
+  }
+  &::after {
+    animation: pulse 2s linear 1s infinite;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/*==============================================*/
+//  SPINNER 2  -  ANIMATION SPINNY
+/*==============================================*/
+.spinner-5 {
+  background: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+
+  span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin: auto;
+    background: $primary;
+    &:nth-child(1) {
+      animation: bounce 1s ease-in-out infinite;
+    }
+    &:nth-child(2) {
+      animation: bounce 1s ease-in-out .33s infinite;
+    }
+    &:nth-child(3) {
+      animation: bounce 1s ease-in-out .66s infinite;
+    }
+  }
+}
+
+@keyframes bounce {
+  0%, 75%, 100% {
+    transform: translateY(0px); 
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+}
+
+/*==============================================*/
+//  LOADER  -  ANIMATION SPINNY
+/*==============================================*/
+
+.loader {
+  width: 90px;
+  height: 0;
+  border-top: 3px dotted $secondary;
+  background: none;
+  // display: inline-block;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: -5px;
+    margin-top: -11px;
+    width: 0;
+    height: 0;
+    border: 10px solid $primary;
+    border-radius: 50%;
+    border-right-color: transparent;
+  }
+  &::before {
+    animation: chomp-t .5s ease-out infinite;
+    // animation: move 2s linear infinite;
+  }
+  &::after {
+    animation: chomp-b .5s ease-out infinite;
+    // animation: move 2s linear infinite;
+  }
+}
+
+@keyframes chomp-t {
+  0%, 100% {
+    transform: rotate(0deg);
+    left: 0;
+  }
+  50% {
+    transform: rotate(45deg);
+    left: 100%;
+  }
+}
+
+@keyframes chomp-b {
+  0%, 100% {
+    transform: rotate(0deg);
+    left: 0;
+  }
+  50% {
+    transform: rotate(-45deg);
+    left: 100%;
+  }
+}
+

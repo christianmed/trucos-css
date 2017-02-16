@@ -1,0 +1,28 @@
+@import 'triangles';
+
+* {
+  box-sizing: border-box;
+}
+
+$bg: #eee;
+
+body {
+  background: $bg;
+  margin-bottom: 2em;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.box-1 {
+  @include triangles-1(left,50,salmon);
+  margin: 0;
+
+}
+.box-2 {
+  @include triangles-1(right,50,salmon);
+  margin: 0;
+
+}

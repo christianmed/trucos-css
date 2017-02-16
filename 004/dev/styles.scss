@@ -1,0 +1,37 @@
+@function text-long-shadow($num,$color) {
+  $text-shadow: -1px 1px #{$color};
+  @for $i from 1 through $num {
+    $text-shadow: '#{$text-shadow},
+                  -#{$i}px #{$i}px #{$color}';
+  }
+  @return unquote($text-shadow);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+$bg:lightseagreen;
+
+body {
+  background: $bg;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+.icon-twitter {
+  text-align: center;
+  font-size: 10em;
+  margin-top: .75em;
+  color: darken($bg,20);
+  text-shadow: text-long-shadow(200, darken($bg,25));
+}

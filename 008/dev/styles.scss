@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+
+$bg: #ddd;
+$triangle: lightseagreen;
+$black: #333;
+
+body {
+  background: $bg;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: $black;
+}
+
+.container {
+  width: 170px;
+  height: 170px;
+  margin: 5rem auto;
+  // background: #fff;
+  position: relative;
+  z-index: -20;
+  transform: rotate(90deg);;
+}
+
+[class^="triangle-"] {
+  width: 0;
+  height: 0;
+  z-index: -10;
+}
+
+.triangle-top-left {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-top: 75px solid $triangle; 
+  border-right: 75px solid transparent;
+}
+.triangle-top-right {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-top: 75px solid darken($triangle,10); 
+  border-left: 75px solid transparent;
+}
+.triangle-bottom-right {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  border-bottom: 75px solid $triangle; 
+  border-left: 75px solid transparent;
+}
+.triangle-bottom-left {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border-bottom: 75px solid darken($triangle,10); 
+  border-right: 75px solid transparent;
+}

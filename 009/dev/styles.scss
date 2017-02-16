@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+}
+
+$bg: #ddd;
+$color1: white;
+$color2: black;
+$size: 150px;
+$percent: 50%;
+
+body {
+  background: $bg;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+h2 {
+  color: $color2;
+  text-align: center;
+}
+
+// .yin-yang {
+//   width: $size;
+//   height: $size;
+//   margin: 5rem auto;
+//   border-radius: 50%;
+//   background:
+//     linear-gradient(
+//       90deg,
+//       $color1 50%,
+//       $color2 50%
+//     );
+//   position: relative;
+//   &::before,
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     width: 50%;
+//     height: 50%;
+//     border-radius: 50%;
+//     left: 50%;
+//     transform: translateX(-50%)
+//   }
+//   &::before {
+//     background:
+//       radial-gradient(
+//         $size / 10 circle at 50% 50%,
+//         $color2 50%,
+//         transparent 50%
+//       ),
+//       $color1;
+//     top: 0;
+//   }
+//   &::after {
+//     background:
+//       radial-gradient(
+//         $size / 10 circle at 50% 50%,
+//         $color1 50%,
+//         transparent 50%
+//       ),
+//       $color2;
+//     bottom: 0;
+//   }
+// }
+
+.yin-yang {
+  width: $size;
+  height: $size;
+  margin: 5rem auto;
+  border-radius: $percent;
+  background:
+    linear-gradient(
+      90deg,
+      $color1 50%,
+      $color2 50%
+    )
+  ;
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: $percent;
+    height: $percent;
+    border-radius: $percent;
+    left: 25%;
+  }
+  &::before {
+    top: 0;
+    background:
+      radial-gradient(
+        $size / 10 circle at 50% 50%,
+        $color2 50%,
+        transparent 50%
+      ),
+      $color1;
+  }
+  &::after {
+    bottom: 0;
+    background:
+      radial-gradient(
+        $size / 10 circle at 50% 50%,
+        $color1 50%,
+        transparent 50%
+      ),
+    $color2;
+  }
+}

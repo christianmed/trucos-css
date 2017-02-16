@@ -1,0 +1,120 @@
+$bg: #ddd;
+$black: #222;
+$white: #f1f1f1;
+$primary: salmon;
+
+$size: 150px;
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, p, span, ul {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  background: $bg;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+img {
+  display: block;
+}
+
+// // // // // // // // // // // // // // // // // // // // // 
+// // // // // // // // // // // // // // // // // // // // // 
+// // // // // // // // // // // // // // // // // // // // // 
+// // // // // // // // // // // // // // // // // // // // // 
+
+header {
+  width: 100%;
+  height: $size;
+  background: darkslateblue;
+}
+
+h1 {
+  color: $white;
+  text-align: center;
+  line-height: $size/2;
+  text-transform: uppercase;
+}
+.container {
+  width: ($size+20)*3;
+  height: 340px;
+  margin: -4.5em auto 8.5em;
+  background: $white;
+  box-shadow:
+    0 20px 40px -10px rgba($black,.5),
+    0 0 5px 3px rgba($black,.15);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+[class^="face-"] {
+  width: $size;
+  height: $size;
+  border-radius: 20px;
+  padding: (($size * 0.4) / 3);
+  background: darkslateblue;
+  display: flex;
+  flex-direction: column;
+}
+
+.dot {
+  width: $size/5;
+  height: $size/5;
+  border-radius: 50%;
+  background: $primary;
+  box-shadow: 3px 3px 3px rgba($black,.5);
+}
+
+.col {
+  display: flex;
+  justify-content: space-between;
+}
+
+.face-2, .face-3, .face-4, .face-5, .face-6 {
+  justify-content: space-between;
+}
+
+.face-1 {
+  justify-content: center;
+  align-items: center;
+}
+
+.face-2 {
+  
+  .dot:first-child {
+    align-self: flex-end;
+  }
+}
+
+.face-3 {
+  
+  .dot:first-child {
+    align-self: flex-end;
+  }
+  .dot:nth-child(2) {
+    align-self: center;
+  }
+}
+
+.face-5 {
+  
+  .dot {
+    align-self: center;
+  }
+}

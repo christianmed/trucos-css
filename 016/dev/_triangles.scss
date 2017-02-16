@@ -1,0 +1,153 @@
+@mixin triangles-1($pos,$size,$color) {
+  @if $pos  == "top" or $pos  == "bottom" or $pos == "left" or $pos  == "right" {
+    width: 0;
+    height: 0;
+    margin: 1em auto;
+    @if $pos == "top" {
+      border-left: #{$size}px solid transparent;
+      border-bottom: #{$size}px solid $color;
+      border-right: #{$size}px solid transparent;
+    } @else if $pos == "bottom" {
+      border-left: #{$size}px solid transparent;
+      border-top: #{$size}px solid $color;
+      border-right: #{$size}px solid transparent;
+    } @else if $pos == "left" {
+      border-top: #{$size}px solid transparent;
+      border-right: #{$size}px solid $color;
+      border-bottom: #{$size}px solid transparent;
+    } @else if $pos == "right" {
+      border-top: #{$size}px solid transparent;
+      border-left: #{$size}px solid $color;
+      border-bottom: #{$size}px solid transparent;
+    }
+  }
+}
+
+@mixin triangles-2($posY,$posX,$size,$color) {
+  @if ($posY == "top" or $posY == "bottom") and ($posX == "left" or $posX == "right") {
+    width: 0;
+    height: 0;
+    margin: 1em auto;
+    @if $posY == "top" {
+      @if $posX == "left" {
+        border-left: #{$size}px solid $color;
+        border-bottom: #{$size}px solid transparent;
+      } @else {
+        border-right: #{$size}px solid $color;
+        border-bottom: #{$size}px solid transparent;
+      }
+    } @else {
+      @if $posX == "left" {
+        border-left: #{$size}px solid $color;
+        border-top: #{$size}px solid transparent;
+      } @else {
+        border-right: #{$size}px solid $color;
+        border-top: #{$size}px solid transparent;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+// ============================================================================
+// CODIGO ORIGINAL
+// ============================================================================
+// [class^="triangle-"] {
+//   width: 0;
+//   height: 0;
+//   margin: 1em auto;
+// }
+
+// .triangle-left {
+//   border-top: 30px solid transparent;
+//   border-right: 30px solid blue;
+//   border-bottom: 30px solid transparent;
+// }
+// .triangle-right {
+//   border-top: 30px solid transparent;
+//   border-left: 30px solid blue;
+//   border-bottom: 30px solid transparent;
+// }
+// .triangle-top {
+//   border-left: 30px solid transparent;
+//   border-bottom: 30px solid blue;
+//   border-right: 30px solid transparent;
+// }
+// .triangle-bottom {
+//   border-left: 30px solid transparent;
+//   border-top: 30px solid blue;
+//   border-right: 30px solid transparent;
+// }
+
+// .triangle-top-left {
+//   border-left: 30px solid blue;
+//   border-bottom: 30px solid transparent;
+// }
+
+// .triangle-top-right {
+//   border-right: 30px solid blue;
+//   border-bottom: 30px solid transparent;
+// }
+
+// .triangle-bottom-left {
+//   border-left: 30px solid blue;
+//   border-top: 30px solid transparent;
+// }
+
+// .triangle-bottom-right {
+//   border-right: 30px solid blue;
+//   border-top: 30px solid transparent;
+// }
+
+// ============================================================================
+// CODIGO SIN ESTILOS DUPLICADAS
+// ============================================================================
+// [class^="triangle-"] {
+//   width: 0;
+//   height: 0;
+//   margin: 1em auto;
+// }
+
+// .triangle-top,
+// .triangle-bottom {
+//   border-left: 30px solid transparent;
+//   border-right: 30px solid transparent;
+// }
+
+// .triangle-top {
+//   border-bottom: 30px solid blue;
+// }
+
+// .triangle-bottom {
+//   border-top: 30px solid blue;
+// }
+
+// .triangle-left,
+// .triangle-top-left,
+// .triangle-bottom-left {
+//   border-left: 30px solid blue;
+// }
+
+// .triangle-left,
+// .triangle-right,
+// .triangle-top-left,
+// .triangle-top-right {
+//   border-bottom: 30px solid transparent;
+// }
+
+// .triangle-left,
+// .triangle-right,
+// .triangle-bottom-left,
+// .triangle-bottom-right {
+//   border-top: 30px solid transparent;
+// }
+
+// .triangle-left,
+// .triangle-top-right,
+// .triangle-bottom-right {
+//   border-right: 30px solid blue;
+// }

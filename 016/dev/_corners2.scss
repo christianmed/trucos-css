@@ -1,0 +1,46 @@
+/*
+    MIXINS para lograr esquinas con inclinación
+
+    Los mixin necesitan tres parámtros:
+      1.- Posición en el eje Y (top o bottom)
+      2.- Posición en el eje X (left o right)
+      3.- Cantidad de grados (1, 1.5, 3, etc)
+      4.- Color (para un mejor efecto se recomienda pasar el mismo color que tenga el elemento HTML con el que se vayan a usar los mixins)
+*/
+
+@mixin corner($positionY,$positionX,$deg,$color) {
+  position: relative;
+  
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    background: $color;
+  }
+  @if $positionY == "top" or "bottom" and $positionX == "left" or "right" {
+    @if $positionY == "top" {
+      &::before {
+        @if $positionX == "left" {
+          transform-origin: right;
+          transform: skewY(#{$deg}deg);
+        } @else {
+          transform-origin: left;
+          transform: skewY(-#{$deg}deg);
+        }
+      }
+    } @else {
+      &::after {
+        @if $positionX == "left" {
+          transform-origin: right;
+          transform: skewY(-#{$deg}deg);
+        } @else {
+          transform-origin: left;
+          transform: skewY(#{$deg}deg);
+        }
+      }
+    }
+  }
+}
